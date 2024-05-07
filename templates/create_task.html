@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+</head>
+<body>
+    <div class="main_div">
+        <h1>Create Task</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="task">Task title:</label>
+                <input style="width: 300px;" type="text" name="task" id="task">
+            </div>
+            <div class="form-group"
+                <label for="status">description:</label>
+                <input style="width: 300px; height: 100px;" type="text" name="description" id="description">
+            </div>
+            <div class="form-group"
+                <label for="status">deadline:</label>
+                <input style="width: 300px; " type="date" name="deadline" id="deadline">
+            </div>
+            <input type="submit" value="Create">
+        </form>
+    </div>
+</body>
+</html>

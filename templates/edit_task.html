@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+</head>
+<body>
+    <div class="main_div">
+    <h1>Edit {{ task.title }} Status </h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label style="padding-right: 50px;" for="status">Status:</label>
+        <select name="status" id="status">
+            <option value="new">New</option>
+            <option value="in_progress">In Progress</option>
+            <option value="done">Done</option>
+        </select>
+        <input type="submit" value="Save">
+    </form>
+    </div>
+</body>
+</html>

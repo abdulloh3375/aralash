@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style4.css' %}">
+</head>
+<body>
+    <div style="text-align: center; margin-top: 100px; padding: 20px; border: 1px solid #000; width: 50%; margin-left: 25%;">
+        <h1>To Do List with django </h1>
+        <div>
+            <a class="status" href="">New</a>
+            <a class="status" href="">In Progress</a>
+            <a class="status" href="">Done</a>
+            <a href="{% url 'create_task' %}" class="add"> Create task</a>
+        </div>        
+        <ul>
+            {% for task in tasks %}
+            <li>{{ task.title }} <a class="edit"  href="{% url 'edit' task.id %}">Edit status</a>   <a class="delete" href="">Delete</a></li> 
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
